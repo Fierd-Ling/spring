@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <!--自动注bean-->
+    <!--强制要求每次返回的對象实例是同一个-->
+   <!-- <bean id="test" class="com.hand.SystemOut" scope="singleton">
+        &lt;!&ndash;给属性赋值&ndash;&gt;
+       &lt;!&ndash; <property name="message" value="Hello World!"/>&ndash;&gt;
+    </bean>-->
+    <!--强制每次返回的实例都不是同一个-->
+   <!-- <bean id="test" class="com.hand.SystemOut" scope="prototype"></bean>-->
+
+    <!--默认情况是每次返回的对象实例都是同一个也就是每次默认的singleton-->
+    <!--<bean id="test" class="com.hand.SystemOut" ></bean>-->
+
+    <!--配置生命周期-->
+    <bean id="test" class="com.hand.SystemOut" destroy-method="destroy" init-method="init" scope="prototype"></bean>
+</beans>
